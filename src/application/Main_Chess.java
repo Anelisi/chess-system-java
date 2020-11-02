@@ -14,6 +14,7 @@ public class Main_Chess {
         ChessMatch chessMatch = new ChessMatch();
 
         while (true) {
+
             try {
                 UI.clearScreen();
                 UI.printBoard(chessMatch.getPieces());
