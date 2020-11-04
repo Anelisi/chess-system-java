@@ -6,6 +6,8 @@ import boardgame.Position;
 import chess.pieces.King;
 import chess.pieces.Rook;
 
+import javax.swing.table.JTableHeader;
+
 public class ChessMatch {
 
     private Board board;
@@ -45,6 +47,8 @@ public class ChessMatch {
     public void validateSourcePosition(Position position){
         if (!board.thereIsPiece(position)){
             throw new ChessException("There is not piece on source position!");
+        } if (!board.piece(position).isThereAnPossibleMove()) {
+            throw new ChessException("There is no possible  moves for the chose piece");
         }
     }
 
