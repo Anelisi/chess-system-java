@@ -6,7 +6,6 @@ import boardgame.Position;
 import chess.pieces.King;
 import chess.pieces.Rook;
 
-import javax.swing.table.JTableHeader;
 
 public class ChessMatch {
 
@@ -25,6 +24,12 @@ public class ChessMatch {
             }
         }
         return mat;
+    }
+
+    public boolean[][] possibleMoves(ChessPosition sourcePosition) {
+        Position position = sourcePosition.toPosition();
+        validateSourcePosition(position);
+        return board.piece(position).possibleMove();
     }
 
     public ChessPiece performChessMove(ChessPosition sourcePosition, ChessPosition targetPosition) {
